@@ -1,0 +1,36 @@
+{
+  "name": "brainjs-neural-network-lerning",
+  "version": "1.0.0",
+  "description": "Обучение нейросети определять пользователей как спамеров",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "next build",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gajet5/brainjs-neural-network-lerning.git"
+  },
+  "keywords": [
+    "react",
+    "next"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gajet5/brainjs-neural-network-lerning/issues"
+  },
+  "homepage": "https://github.com/gajet5/brainjs-neural-network-lerning#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.9.1",
+    "@material-ui/icons": "^4.9.1",
+    "express": "^4.17.1",
+    "next": "^9.2.1",
+    "next-i18next": "^4.2.0",
+    "nodemon": "^2.0.2",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}

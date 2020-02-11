@@ -1,0 +1,6 @@
+{
+  "company-name": "Касперский",
+  "change-locale": "Изменить язык",
+  "error-with-status": "На сервере произошла ошибка: {{statusCode}}",
+  "error-without-status": "На сервере произошла ошибка"
+}
