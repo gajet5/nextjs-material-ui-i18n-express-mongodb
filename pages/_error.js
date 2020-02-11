@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import { Typography } from '@material-ui/core';
 
-import { withTranslation } from '../i18n';
+import { withTranslation } from '../plugin/i18n';
 
 function Error({ statusCode, t }) {
   return (

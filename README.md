@@ -2,10 +2,10 @@
 Собрал небольшую площадку для старта нового проекта с SSR
 
 ### Сборка содержит
-* React
 * NextJS
 * Material-UI
 * I18Next
+* Mongoosejs
 * CustomFonts
 * Custom color
 
@@ -16,3 +16,4 @@
 * https://material-ui.com/ru/styles/advanced/#next-js
 * https://material-ui.com/ru/customization/typography/#self-hosted-fonts
 * https://github.com/isaachinman/next-i18next
+* https://mongoosejs.com

@@ -1,7 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-import { appWithTranslation } from '../i18n';
+import { appWithTranslation } from '../plugin/i18n';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../plugin/material-ui/theme';

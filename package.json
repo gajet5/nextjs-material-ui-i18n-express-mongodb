@@ -2,11 +2,11 @@
   "name": "brainjs-neural-network-lerning",
   "version": "1.0.0",
   "description": "Обучение нейросети определять пользователей как спамеров",
-  "main": "index.js",
+  "main": "./server/server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon ./server/server.js",
     "build": "next build",
-    "start": "node server.js"
+    "start": "node ./server/server.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,10 @@
   "dependencies": {
     "@material-ui/core": "^4.9.1",
     "@material-ui/icons": "^4.9.1",
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "mongoose": "^5.8.11",
     "next": "^9.2.1",
     "next-i18next": "^4.2.0",
     "nodemon": "^2.0.2",

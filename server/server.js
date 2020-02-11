@@ -1,19 +1,27 @@
+require('dotenv').config();
+
 const express = require('express');
+const { connection } = require('./services/mongo');
 const next = require('next');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
-const nextI18Next= require('./i18n');
+const nextI18Next= require('../plugin/i18n');
 
 const app = next({ dev: true });
 const handle = app.getRequestHandler();
 
-(async () => {
+const api = require('./api');
+
+connection.once('open', async () => {
   try {
     await app.prepare();
     const server = express();
 
     await nextI18Next.initPromise;
     server.use(nextI18NextMiddleware(nextI18Next));
+    server.use(express.json());
+
+    server.use('/api', api);
 
     server.all('*', (req, res) => {
       return handle(req, res)
@@ -29,4 +37,4 @@ const handle = app.getRequestHandler();
   } catch (e) {
     console.log(e);
   }
-})();
+});
