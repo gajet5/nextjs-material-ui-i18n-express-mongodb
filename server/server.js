@@ -6,6 +6,7 @@ const next = require('next');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 
 const nextI18Next= require('../plugin/i18n');
+const config = require('./config');
 
 const app = next({ dev: true });
 const handle = app.getRequestHandler();
@@ -28,8 +29,8 @@ connection.once('open', async () => {
     });
 
     try {
-      await server.listen(3000);
-      console.log('> Ready on http://localhost:3000');
+      await server.listen(config.SERVER.PORT);
+      console.log(`> Ready on http://localhost:${config.SERVER.PORT}`);
     } catch (e) {
       console.log(e);
     }
