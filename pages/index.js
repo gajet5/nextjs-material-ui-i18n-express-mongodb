@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import absoluteUrl from 'next-absolute-url';
 import {
   Typography,
   Button,
@@ -14,15 +15,15 @@ import {
 
 import { i18n, withTranslation } from '../plugin/i18n';
 
-async function getItems() {
+async function getItems(origin) {
   const {
     data: { data }
-  } = await axios.get(`${process.env.WEB_URI}/api/items`);
+  } = await axios.get(`${origin}/api/items`);
 
   return data;
 }
 
-function Index({ t, currentLanguage, initItems }) {
+function Index({ t, currentLanguage, initItems, origin }) {
   const [item, setItem] = useState('');
   const [items, setItems] = useState(initItems);
 
@@ -31,11 +32,11 @@ function Index({ t, currentLanguage, initItems }) {
   }
 
   async function submit() {
-    await axios.post(`${process.env.WEB_URI}/api/items`, {
+    await axios.post(`${origin}/api/items`, {
       itemName: item
     });
     setItem('');
-    setItems(await getItems());
+    setItems(await getItems(origin));
   }
 
   return (
@@ -75,8 +76,11 @@ function Index({ t, currentLanguage, initItems }) {
 }
 
 Index.getInitialProps = async ({ req }) => {
+  const { origin } = absoluteUrl(req);
+
   return {
-    initItems: await getItems(),
+    origin,
+    initItems: await getItems(origin),
     namespacesRequired: ['common', 'test'],
     currentLanguage: req ? req.language : i18n.language
   };

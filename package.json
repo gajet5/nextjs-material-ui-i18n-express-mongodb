@@ -30,6 +30,7 @@
     "express": "^4.17.1",
     "mongoose": "^5.8.11",
     "next": "^9.2.1",
+    "next-absolute-url": "^1.2.1",
     "next-i18next": "^4.2.0",
     "nodemon": "^2.0.2",
     "prop-types": "^15.7.2",
