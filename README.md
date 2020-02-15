@@ -6,6 +6,7 @@
 * Material-UI
 * I18Next
 * Mongoosejs
+* axios
 * CustomFonts
 * Custom color
 
